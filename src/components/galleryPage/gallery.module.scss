@@ -1,0 +1,23 @@
+.gallery-image-container {
+  background: #2c2a2b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .gallery-images {
+    display: grid;
+    max-width: 100%;
+
+    gap: 80px;
+
+    grid-template-columns: minmax(0, 350px) minmax(0, 350px);
+    grid-template-rows: minmax(0, 180px) minmax(0, 180px) minmax(0, 180px);
+    img {
+      object-fit: cover;
+
+      width: 100%;
+    }
+  }
+}
