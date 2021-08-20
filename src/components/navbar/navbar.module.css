@@ -1,0 +1,48 @@
+.wrapper {
+  width: 100vw;
+  position: fixed;
+  z-index: 4;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Orator";
+  padding: 20px 40px;
+  font-weight: 100;
+}
+
+.container .left-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  gap: 9px;
+}
+
+.container .logo-container {
+  width: 150px;
+  height: auto;
+}
+
+.container .logo-container .logo {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.menu-label {
+  cursor: pointer;
+}
+/*# sourceMappingURL=navbar.module.css.map */

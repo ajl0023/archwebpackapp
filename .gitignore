@@ -81,7 +81,7 @@ jspm_packages/
 .next
 
 # Lerna
-lerna-debug.log
+lerna-debug.log 
 
 # System Files
 .DS_Store

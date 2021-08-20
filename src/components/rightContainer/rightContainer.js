@@ -9,20 +9,19 @@ import hiddenLogoBrown from "./images/hiddenLogoBrown.png";
 import { renderGallery } from "../galleryPage/gallery";
 
 const rightContainer = [];
-console.log(styles["logo-container"]);
+
 export function createRightEle(innerEle, classNameArr) {
   const container = document.createElement("div");
 
   const html = /* HTML */ ` <div class="">${innerEle}</div>`;
 
   container.innerHTML = html;
-  console.log(container.firstElementChild);
+
   classNameArr.forEach((name) => {
     container.firstElementChild.classList.add(name);
   });
 
   rightContainer.push(container.firstElementChild.outerHTML);
-
 }
 const gallery = renderGallery("r");
 createRightEle(/* HTML */ `${gallery.outerHTML}`, [styles["container"]]);
@@ -45,7 +44,8 @@ createRightEle(
       <img
         id="video-modal-trigger"
         class=${pageStyle["image-page"]}
-        src=${mullholland}
+        data-src=${mullholland}
+        data-id="lazy"
         alt=""
       />
     </div>
@@ -82,7 +82,12 @@ createRightEle(
 createRightEle(
   /* HTML */ ` <div class=${pageStyle["container"]}>
     <div class=${pageStyle["image-container"]}>
-      <img class=${pageStyle["image-page"]} src=${maliview} alt="" />
+      <img
+        class=${pageStyle["image-page"]}
+        data-id="lazy"
+        data-src=${maliview}
+        alt=""
+      />
     </div>
   </div>`,
   [pageStyle["container"], pageStyle["image-content"]]

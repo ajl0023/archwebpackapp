@@ -1,0 +1,14 @@
+.container {
+  position: fixed;
+  z-index: 3;
+  right: 40px;
+  bottom: 25px;
+
+  width: 15px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  object-fit: cover;
+}

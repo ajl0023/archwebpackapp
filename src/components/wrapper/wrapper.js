@@ -2,6 +2,7 @@ import styles from "./wrapper.module.scss";
 import Splide from "@splidejs/splide";
 import { leftContainer as leftContainerArr } from "../leftContainer/leftContainer";
 import { rightContainer as rightContainerArr } from "../rightContainer/rightContainer";
+
 const element = document.createElement("div");
 
 export const renderWrapper = (fragment) => {
@@ -16,6 +17,9 @@ export const renderWrapper = (fragment) => {
       style="transform: translate3d(0px, 0px, 0px)"
       class=${styles["right-container"]}
     ></div>
+    <div class=${styles["arrow-container"]}>
+      <div class=${styles["arrow"]}></div>
+    </div>
   </div>`;
   if ("scrollRestoration" in window.history) {
     window.history.scrollRestoration = "manual";
@@ -38,14 +42,15 @@ export const renderWrapper = (fragment) => {
 
     rightContainer.appendChild(newEle.children[0]);
   });
+  console.log(leftContainerArr.length);
 
   let shouldScroll = true;
 
   let windowHeight = window.innerHeight;
-  console.log(windowHeight);
+
   let currentPage = 0;
   let currentContainerSizeLeft = 0;
-  let currentContainerSizeRight = -windowHeight * 5;
+  let currentContainerSizeRight = -windowHeight * (leftContainerArr.length - 1);
 
   rightContainer.style.transform = `translate3d(0px, ${currentContainerSizeRight}px, 0px)`;
 
@@ -58,7 +63,7 @@ export const renderWrapper = (fragment) => {
     //   return;
     // }
     if (shouldScroll) {
-      if (e.deltaY > 0) {
+      if (e.deltaY > 0 && currentPage < leftContainerArr.length - 1) {
         currentContainerSizeLeft += windowHeight;
         currentContainerSizeRight += windowHeight;
         currentPage += 1;
@@ -66,7 +71,7 @@ export const renderWrapper = (fragment) => {
         leftContainer.style.transform = `translate3d(0px, -${currentContainerSizeLeft}px, 0px)`;
         rightContainer.style.transform = `translate3d(0px, ${currentContainerSizeRight}px, 0px)`;
       }
-      if (e.deltaY < 0) {
+      if (e.deltaY < 0 && currentPage > 0) {
         currentContainerSizeLeft -= windowHeight;
         currentContainerSizeRight -= windowHeight;
         currentPage -= 1;

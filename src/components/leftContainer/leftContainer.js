@@ -15,7 +15,7 @@ export function createLeftEle(innerEle, classNameArr) {
   const html = /* HTML */ ` <div class="">${innerEle}</div>`;
 
   container.innerHTML = html;
-  console.log(container.firstElementChild);
+
   classNameArr.forEach((name) => {
     container.firstElementChild.classList.add(name);
   });
@@ -29,8 +29,8 @@ createLeftEle(
 );
 createLeftEle(
   /* HTML */ ` <div class=${pageStyle["container"]}>
-    <div class=${styles["image-container"]}>
-      <img class=${styles["image-page"]} src=${malibu} alt="" />
+    <div class=${pageStyle["image-container"]}>
+      <img class=${pageStyle["image-page"]} src=${malibu} alt="" />
     </div>
   </div>`,
   [pageStyle["container"], pageStyle["image-content"]]
@@ -39,7 +39,8 @@ createLeftEle(
   /* HTML */ `<div class=${pageStyle["hidden-logo-container-brown"]}>
       <div class="hidden-logo-container">
         <img
-          src=${hiddenLogoBrown}
+          data-id="lazy"
+          data-src=${hiddenLogoBrown}
           class=${pageStyle["hidden-logo-brown"]}
           alt=""
         />
@@ -71,7 +72,12 @@ createLeftEle(
 createLeftEle(
   /* HTML */ ` <div class=${pageStyle["container"]}>
     <div class=${pageStyle["image-container"]}>
-      <img class=${pageStyle["image-page"]} src=${mulholland} alt="" />
+      <img
+        class=${pageStyle["image-page"]}
+        data-id="lazy"
+        data-src=${mulholland}
+        alt=""
+      />
     </div>
   </div>`,
   [pageStyle["container"], pageStyle["image-content"]]

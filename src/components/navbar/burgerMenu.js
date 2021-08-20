@@ -29,4 +29,4 @@ export const html = /* HTML */ ` <input
       </li>
     </ul>
   </div>
-  <div class=${styles["header-mask"]}></div>`;
+  <div data-id="header-mask" class=${styles["header-mask"]}></div>`;

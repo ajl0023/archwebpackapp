@@ -9,15 +9,17 @@
   .gallery-images {
     display: grid;
     max-width: 100%;
-
-    gap: 80px;
+    padding: 100px;
+    gap: 30px;
 
     grid-template-columns: minmax(0, 350px) minmax(0, 350px);
     grid-template-rows: minmax(0, 180px) minmax(0, 180px) minmax(0, 180px);
-    img {
-      object-fit: cover;
+    .gallery-property-image-container {
+      .gallery-property-image {
+        object-fit: cover;
 
-      width: 100%;
+        width: 100%;
+      }
     }
   }
 }
