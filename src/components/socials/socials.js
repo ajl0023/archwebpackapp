@@ -14,7 +14,7 @@ Object.entries(cache).map((module) => module[1].default);
 export const renderSocialBar = (fragment) => {
   element.innerHTML = /* HTML */ `
     <div class=${styles["container"]}>
-      <img data-id="lazy" src=${cache["./facebook.svg"]} alt="" />
+      <img  src=${cache["./facebook.svg"]} alt="" />
       <img src=${cache["./instagram.svg"]} alt="" />
       <img src=${cache["./twitter.svg"]} alt="" />
       <img src=${cache["./linkedin.svg"]} alt="" />
