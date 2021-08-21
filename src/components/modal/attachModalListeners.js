@@ -13,7 +13,7 @@ document.body.addEventListener("click", function (e) {
     closeModal();
   }
   if (e.target.name === "gallery-image-container") {
-    renderModal("gallery", e.target.src);
+    renderModal("gallery", e.target.getAttribute('highRes-src'));
   }
   let targetElement = document.querySelector(`input.${styles["burger-input"]}`);
   
