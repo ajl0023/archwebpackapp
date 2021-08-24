@@ -1,1 +1,1 @@
-npm run build &&  git add . && git commit -m "compressed all images" && git push origin gh-pages
+npm run build &&  git add . && git commit -m "compressed one more image" && git push origin gh-pages
