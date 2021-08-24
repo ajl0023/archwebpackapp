@@ -42,7 +42,6 @@ export const renderWrapper = (fragment) => {
 
     rightContainer.appendChild(newEle.children[0]);
   });
-  console.log(leftContainerArr.length);
 
   let shouldScroll = true;
 
@@ -55,6 +54,7 @@ export const renderWrapper = (fragment) => {
   rightContainer.style.transform = `translate3d(0px, ${currentContainerSizeRight}px, 0px)`;
 
   window.addEventListener("wheel", function (e) {
+    
     if (rightContainer.style.transition !== "all 1s ease-out") {
       rightContainer.style.transition = "all 1s ease-out";
     }
@@ -115,8 +115,16 @@ export const renderWrapper = (fragment) => {
   for (let i = 0; i < listContainer.children.length; i++) {
     const ele = listContainer.children[i];
     ele.addEventListener("click", function (e) {
+      shouldScroll = false;
+
       leftContainer.style.transform = `translate3d(0px, -${scrollArr[i].left}px, 0px)`;
       rightContainer.style.transform = `translate3d(0px, ${scrollArr[i].right}px, 0px)`;
+      currentPage = i;
+      window.setTimeout(() => {
+        currentContainerSizeLeft = scrollArr[i].left;
+        currentContainerSizeRight = scrollArr[i].right;
+        shouldScroll = true;
+      }, 1100);
     });
   }
   return element;

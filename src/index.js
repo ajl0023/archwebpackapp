@@ -17,7 +17,7 @@ document.body.appendChild(docFrag);
 const videoTrigger = document.getElementById("video-modal-trigger");
 const closeModalTrigger = document.getElementById("wrapper-trigger");
 function test() {
-  console.log("lazyasfdf");
+  
 }
 const lazy = new LazyLoad({
   elements_selector: '[data-id="lazy"]',
@@ -25,5 +25,5 @@ const lazy = new LazyLoad({
   callback_enter: test,
 });
 const x = lazy.update();
-console.log(lazy);
+
 require("./components/modal/attachModalListeners");

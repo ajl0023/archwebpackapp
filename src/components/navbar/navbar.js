@@ -25,5 +25,5 @@ export const renderNav = (fragment) => {
 
   fragment.appendChild(element.firstElementChild);
 
-  console.log(listContainer, 345);
+  
 };

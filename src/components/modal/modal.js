@@ -3,7 +3,7 @@ import styles from "./modal.module.scss";
 const element = document.createElement("div");
 
 export const renderModal = (type, image) => {
-  console.log(image)
+  
   const mainEle =
     type === "gallery"
       ? `
