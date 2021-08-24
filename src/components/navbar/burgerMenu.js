@@ -14,19 +14,19 @@ export const html = /* HTML */ ` <input
     ><span>menu</span></label
   >
   <div class=${styles["side-menu-container"]}>
-    <ul class=${styles["side-menu-item-container"]}>
+    <ul name="list-container" class=${styles["side-menu-item-container"]}>
       <li>home</li>
       <li>malibu life</li>
       <li>discover</li>
       <li>equestrian</li>
       <li>video</li>
       <li>pictures</li>
-      <li>contact</li>
-      <li>
-        <div class=${styles["sidebar-logo-container"]}>
-          <img class=${styles["sidebar-logo"]} src=${logo} alt="" />
-        </div>
-      </li>
+
+      <div class=${styles["sidebar-logo-container"]}>
+        <a href="https://www.apeldesign.com/">
+          <img class=${styles["sidebar-logo"]} src=${logo} alt=""
+        /></a>
+      </div>
     </ul>
   </div>
   <div data-id="header-mask" class=${styles["header-mask"]}></div>`;

@@ -85,6 +85,39 @@ export const renderWrapper = (fragment) => {
 
     shouldScroll = false;
   });
-
+  const listContainer = fragment.querySelector("ul[name='list-container']");
+  const scrollArr = [
+    {
+      left: 0,
+      right: windowHeight * -5,
+    },
+    {
+      left: windowHeight,
+      right: windowHeight * -4,
+    },
+    {
+      left: windowHeight * 2,
+      right: windowHeight * -3,
+    },
+    {
+      left: windowHeight * 3,
+      right: windowHeight * -2,
+    },
+    {
+      left: windowHeight * 4,
+      right: windowHeight * -1,
+    },
+    {
+      left: windowHeight * 5,
+      right: windowHeight * 0,
+    },
+  ];
+  for (let i = 0; i < listContainer.children.length; i++) {
+    const ele = listContainer.children[i];
+    ele.addEventListener("click", function (e) {
+      leftContainer.style.transform = `translate3d(0px, -${scrollArr[i].left}px, 0px)`;
+      rightContainer.style.transform = `translate3d(0px, ${scrollArr[i].right}px, 0px)`;
+    });
+  }
   return element;
 };

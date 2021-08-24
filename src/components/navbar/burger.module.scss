@@ -15,6 +15,7 @@
     padding: 40px 8px;
     overflow-y: scroll;
     height: 100%;
+    margin-top: 1.5rem;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -61,7 +62,7 @@
     text-align: center;
     justify-content: center;
     text-transform: uppercase;
-
+    position: relative;
     gap: 12px;
     flex: 1;
 
@@ -148,7 +149,9 @@
   display: none;
   &:checked ~ .burger-label {
     z-index: 4;
-
+   
+    
+    
     .main-trigger-icon {
       transition: all 300ms ease-in-out;
       background-color: transparent;
@@ -162,6 +165,7 @@
       }
       &:after {
         top: 0;
+
         z-index: 4;
         background-color: black;
         transform: rotate(-45deg);
@@ -191,17 +195,22 @@
   overflow: hidden;
 }
 .side-menu-container {
+  position: relative;
   @include side-menu-container(-600px);
 }
 .sidebar-logo-container {
-  width: 240px;
   display: flex;
-  align-items: flex-end;
+  width: 100%;
 
-  padding: 60px 20px 20px 20px;
+  justify-content: center;
 
   .sidebar-logo {
-    width: 100%;
+    position: absolute;
+    bottom: 40px;
+    width: 240px;
+
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
     height: auto;
     object-fit: cover;

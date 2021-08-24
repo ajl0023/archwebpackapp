@@ -134,7 +134,7 @@ export const renderGallery = (pos) => {
             name="gallery-image-container"
             class=${styles["gallery-property-image"]}
             data-src=${cache["./9.jpg"]}
-            highRes-src=${highResImages["./19.jpg"]}
+            highRes-src=${highResImages["./9.jpg"]}
             alt=""
           />
         </div>
